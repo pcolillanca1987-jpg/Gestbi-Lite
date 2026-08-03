@@ -1,7 +1,7 @@
 // State & Configuration
 let appConfig = {
   nombre_app: "GESTBI LITE",
-  subtitulo_app: "Tinder de piezas Concepción",
+  subtitulo_app: "Match de piezas Concepción",
   color_principal: "#7c3aed"
 };
 
@@ -104,13 +104,13 @@ async function loadConfig() {
 }
 
 function applyConfigUI() {
-  document.title = `${appConfig.nombre_app} - ${appConfig.subtitulo_app || 'Tinder de piezas Concepción'}`;
+  document.title = `${appConfig.nombre_app} - ${appConfig.subtitulo_app || 'Match de piezas Concepción'}`;
   
   const titleEl = document.getElementById("app-title");
   if (titleEl) titleEl.textContent = appConfig.nombre_app || "GESTBI LITE";
 
   const subEl = document.getElementById("app-subtitle");
-  if (subEl) subEl.textContent = appConfig.subtitulo_app || "Tinder de piezas Concepción";
+  if (subEl) subEl.textContent = appConfig.subtitulo_app || "Match de piezas Concepción";
 
   const logoEl = document.getElementById("app-logo");
   if (logoEl && appConfig.logo_url) logoEl.src = appConfig.logo_url;
@@ -122,7 +122,7 @@ function applyConfigUI() {
 
 // Storage Management
 function loadDataFromStorage() {
-  const savedRooms = localStorage.getItem("gestbi_tinder_rooms");
+  const savedRooms = localStorage.getItem("gestbi_Match_rooms");
   const savedBuscadores = localStorage.getItem("gestbi_buscadores");
   const savedMatches = localStorage.getItem("matches");
   const savedPacks = localStorage.getItem("gestbi_onedrive_packs");
@@ -204,7 +204,7 @@ function loadDataFromStorage() {
 }
 
 function saveRoomsToStorage() {
-  localStorage.setItem("gestbi_tinder_rooms", JSON.stringify(rawRoomsData));
+  localStorage.setItem("gestbi_Match_rooms", JSON.stringify(rawRoomsData));
 }
 
 function saveBuscadoresToStorage() {
@@ -415,7 +415,7 @@ function renderCardStack() {
   const currentPhoto = room.fotos && room.fotos[currentPhotoIndex] ? room.fotos[currentPhotoIndex] : 'https://via.placeholder.com/700x500?text=Pieza+Concepcion';
 
   stack.innerHTML = `
-    <article class="tinder-card" id="active-card">
+    <article class="Match-card" id="active-card">
       <div class="swipe-stamp stamp-like">LIKE</div>
       <div class="swipe-stamp stamp-nope">NOPE</div>
 
